@@ -186,4 +186,27 @@ class BiRectLineUpView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : BiRectLineUpView) {
+
+        private val animator : Animator = Animator(view)
+        private val brlu : BiRectLineUp = BiRectLineUp(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            brlu.draw(canvas, paint)
+            animator.animate {
+                brlu.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            brlu.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
