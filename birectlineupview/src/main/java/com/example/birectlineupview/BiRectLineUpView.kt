@@ -211,4 +211,13 @@ class BiRectLineUpView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : BiRectLineUpView {
+            val view : BiRectLineUpView = BiRectLineUpView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
