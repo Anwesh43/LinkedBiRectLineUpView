@@ -40,7 +40,13 @@ fun Canvas.drawBiRectLineUp(scale : Float, w : Float, h : Float, paint : Paint) 
         save()
         scale(1f - 2 * j, 1f - 2 * j)
         drawRect(RectF(-w /2, -h / 2, -w / 2 + w * 0.5f * sf1, 0f), paint)
-        drawLine(-w / 4, -h / 2, -w / 4, -h / 2 - h * 0.5f * sf2, paint)
+        drawLine(
+            -w / 4,
+            -h / 2 - h * 0.5f * sf3,
+            -w / 4,
+            -h / 2 - h * 0.5f * sf2,
+            paint
+        )
         restore()
     }
     restore()
