@@ -38,8 +38,8 @@ fun Canvas.drawBiRectLineUp(scale : Float, w : Float, h : Float, paint : Paint) 
     translate(w / 2, h)
     for (j in 0..1) {
         save()
-        scale(1f - 2 * j, 1f - 2 * j)
-        drawRect(RectF(-w /2, -h / 2, -w / 2 + w * 0.5f * sf1, 0f), paint)
+        scale(1f - 2 * j, 1f)
+        drawRect(RectF(-w /2, -h / 2 - h * 0.5f * sf3, -w / 2 + w * 0.5f * sf1, -h * 0.5f * sf3), paint)
         drawLine(
             -w / 4,
             -h / 2 - h * 0.5f * sf3,
